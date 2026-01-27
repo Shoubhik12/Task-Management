@@ -71,6 +71,10 @@ const verifyJWT = (req,res,next)=>{
      }
 }
 
+app.get("/", async (req,res) => {
+    res.json({message:"The site is working."})
+})
+
 
 app.post("/auth/login", async (req,res)=>{
     try {
