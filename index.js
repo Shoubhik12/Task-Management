@@ -134,7 +134,7 @@ app.post("/tasks",async (req,res) => {
 
 async function readTasks() {
     try {
-        const task = await Task.find()
+        const task = await Task.find().populate("project","name").populate("owners","email")
         return task
     } catch (error) {
         throw error        
