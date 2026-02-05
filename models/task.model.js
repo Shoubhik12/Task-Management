@@ -46,8 +46,8 @@ const taskSchema = new mongoose.Schema({
 )
 
 
-taskSchema.pre('save', function (next) { 
-    this.updatedAt = Date.now(); next(); 
+taskSchema.pre('save', function () { 
+    this.updatedAt = Date.now();  
 });
 
 const Task = mongoose.model("Task",taskSchema)

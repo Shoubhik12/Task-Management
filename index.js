@@ -128,7 +128,7 @@ app.post("/tasks",async (req,res) => {
             res.status(400).json({error:"Inavlid input"})
         }
     } catch (error) {
-        res.status(404).json({error:error})
+        res.status(500).json({error:error.message})
     }
 })
 
