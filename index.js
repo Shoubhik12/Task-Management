@@ -45,7 +45,7 @@ app.post("/auth/signup", async (req,res) => {
         const user = await createUser({name,email,password:hasedPass})
 
         if(user){
-            res.status(201).json({message:"User created."})
+            res.status(201).json({message:"User created.",data:user})
         }
         else{
             res.status(404).json({error:"Inavlid data."})
